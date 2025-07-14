@@ -88,17 +88,46 @@ def scatter_plots(participants_df, x_col, y_col, title, dot_color, line_color):
     plt.show()
 
 
-def box_plots(participants_df, group_col, score_col, title, palette="crest"):
+def box_plots(participants_df, group_col, score_col, hue_col, title, palette):
     plt.figure(figsize=(8, 5))
-    sns.boxplot(
+
+    # Create boxplot
+    ax = sns.boxplot(
         x=group_col,
         y=score_col,
-        hue=group_col,  # Explicitly use hue
+        hue=hue_col,
         data=participants_df,
         palette=palette,
-        dodge=False,  # Prevent duplicate boxes
-        legend=False,  # Hide redundant legend
+        dodge=True,
     )
+
+    # Set alpha for each box patch
+    # Each hue level per group_col adds one box, so we iterate over ax.patches
+    for patch in ax.patches:
+        patch.set_facecolor(patch.get_facecolor()[:3] + (0.7,))  # Set alpha to 0.3
+
+    # Add stripplot on top
+    sns.stripplot(
+        x=group_col,
+        y=score_col,
+        hue=hue_col,
+        data=participants_df,
+        dodge=True,
+        palette=palette,
+        alpha=0.7,
+        size=6,
+        jitter=True,
+        legend=False,
+    )
+
+    # Clean up duplicated legend
+    handles, labels = ax.get_legend_handles_labels()
+    plt.legend(
+        handles[: len(participants_df[hue_col].unique())],
+        labels[: len(participants_df[hue_col].unique())],
+        title=hue_col,
+    )
+
     plt.title(title, fontsize=14)
     plt.xlabel(group_col)
     plt.ylabel(score_col)
