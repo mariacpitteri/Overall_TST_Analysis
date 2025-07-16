@@ -4,6 +4,23 @@ import glob
 import os
 
 
+# Function to load all data from the different parts of the study
+def load_data(directory_path):
+    """
+    Loads all CSV files from the given directory.
+    Returns a dictionary of DataFrames with keys as filenames (without extensions).
+    """
+    file_paths = glob.glob(os.path.join(directory_path, "*.csv"))
+    file_paths.sort()
+
+    dataframes = {
+        os.path.splitext(os.path.basename(path))[0]: pd.read_csv(path)
+        for path in file_paths
+    }
+
+    return dataframes
+
+
 def group_mb_data(df, group_col, score_col):
     result = (
         df.groupby(group_col)[score_col]

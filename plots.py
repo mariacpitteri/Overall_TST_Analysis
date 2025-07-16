@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
 
 def plot_centiles(df):
@@ -84,6 +85,35 @@ def scatter_plots(participants_df, x_col, y_col, title, dot_color, line_color):
     # Set custom y-axis ticks
     # plt.yticks(np.arange(-0.5, 1.6, 0.5), fontsize=25)  # stops at 1.5
     # plt.ylim(-0.5, 1.75)
+    plt.tight_layout()
+    plt.show()
+
+
+def point_plot(participants_df):
+    # Filter out (Intercept)
+    df_filtered = participants_df[
+        participants_df["Predictor"].str.strip().str.lower() != "(intercept)"
+    ]
+
+    plt.figure(figsize=(8, 6))
+
+    # Plot points using seaborn (for styling)
+    sns.scatterplot(data=df_filtered, x="Predictor", y="Estimate", color="blue", s=100)
+
+    # Add error bars manually using Std. Error
+    plt.errorbar(
+        x=df_filtered["Predictor"],
+        y=df_filtered["Estimate"],
+        yerr=df_filtered["Std. Error"],
+        fmt="none",  # No extra markers
+        ecolor="black",  # Error bar color
+        elinewidth=1.2,
+        capsize=4,
+    )
+
+    plt.ylim(min(0, df_filtered["Estimate"].min()), df_filtered["Estimate"].max() + 0.3)
+    plt.xticks(rotation=45)
+    plt.title("Predictor Estimates ± SE")
     plt.tight_layout()
     plt.show()
 

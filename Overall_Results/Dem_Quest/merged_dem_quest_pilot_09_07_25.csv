@@ -1,0 +1,3 @@
+study,participant_id,age,gender,ethnicity,ocir_overall,alcohol_overall,social_overall,bis_overall,neutral_overall,depress_overall,eat_overall,schizo_overall,iq_overall,anxiety_overall,apathy_overall,mh_past,mh_current,fam_mh_past
+pilot,66d31a1b0515fe747830bab9,60,1,"White: English, Welsh, Scottish, Northern Irish or British",23,12,50,70,32,39,4,13,9,48,60,,,
+pilot,572bcdbb34b25a0010ddd977,50,1,"White: English, Welsh, Scottish, Northern Irish or British",13,11,39,47,40,45,6,11,10,53,62,,,"['Major Depression', 'Alcohol Dependence', 'Substance Use Disorder']"
