@@ -1,10 +1,10 @@
-"Questionnaire","Coefficient","SE","Z_value","P_value"
-"Eating Disorders",-0.279025209284024,0.18044972449004,-1.54627672650963,0.122037750227724
-"Impulsivity",0.279025305120584,0.180450647361921,1.54626934954108,0.122039531078621
-"OCD",0.2790257957905,0.18045398891281,1.54624343563454,0.122045787034735
-"Alcohol Addiction",0.279025678431351,0.180451421053479,1.54626478861952,0.122040632126585
-"Schizotypy",0.279025678431351,0.180451421053479,1.54626478861952,0.122040632126585
-"Depression",-0.279025209284024,0.18044972449004,-1.54627672650963,0.122037750227724
-"Trait Anxiety",-0.279025664266617,0.180451665473378,-1.546262615724,0.122041156686067
-"Apathy",-0.279025209284024,0.18044972449004,-1.54627672650963,0.122037750227724
-"Social Anxiety",0.279025305120584,0.180450647361921,1.54626934954108,0.122039531078621
+"questionnaire","symptom_var","predictor","predictor_estimate","std_error","z_value","p_value","model_formula"
+"Eating Disorders","eat_z","lastWinRew:lastTranUnc:eat_z",-0.279025209284024,0.18044972449004,-1.54627672650963,0.122037750227724,"currStay ~ lastWinRew * lastTranUnc * eat_z + lastWinRew * lastTranUnc *      (iq_z + age_z + gender) + (lastWinRew * lastTranUnc + 1 |      participant_id)"
+"Impulsivity","bis_z","lastWinRew:lastTranUnc:bis_z",0.279025305120584,0.180450647361921,1.54626934954108,0.122039531078621,"currStay ~ lastWinRew * lastTranUnc * bis_z + lastWinRew * lastTranUnc *      (iq_z + age_z + gender) + (lastWinRew * lastTranUnc + 1 |      participant_id)"
+"OCD","oci_z","lastWinRew:lastTranUnc:oci_z",0.2790257957905,0.18045398891281,1.54624343563454,0.122045787034735,"currStay ~ lastWinRew * lastTranUnc * oci_z + lastWinRew * lastTranUnc *      (iq_z + age_z + gender) + (lastWinRew * lastTranUnc + 1 |      participant_id)"
+"Alcohol Addiction","alcohol_z","lastWinRew:lastTranUnc:alcohol_z",0.279025678431351,0.180451421053479,1.54626478861952,0.122040632126585,"currStay ~ lastWinRew * lastTranUnc * alcohol_z + lastWinRew *      lastTranUnc * (iq_z + age_z + gender) + (lastWinRew * lastTranUnc +      1 | participant_id)"
+"Schizotypy","schizo_z","lastWinRew:lastTranUnc:schizo_z",0.279025678431351,0.180451421053479,1.54626478861952,0.122040632126585,"currStay ~ lastWinRew * lastTranUnc * schizo_z + lastWinRew *      lastTranUnc * (iq_z + age_z + gender) + (lastWinRew * lastTranUnc +      1 | participant_id)"
+"Depression","depress_z","lastWinRew:lastTranUnc:depress_z",-0.279025209284024,0.18044972449004,-1.54627672650963,0.122037750227724,"currStay ~ lastWinRew * lastTranUnc * depress_z + lastWinRew *      lastTranUnc * (iq_z + age_z + gender) + (lastWinRew * lastTranUnc +      1 | participant_id)"
+"Trait Anxiety","anxiety_z","lastWinRew:lastTranUnc:anxiety_z",-0.279025664266617,0.180451665473378,-1.546262615724,0.122041156686067,"currStay ~ lastWinRew * lastTranUnc * anxiety_z + lastWinRew *      lastTranUnc * (iq_z + age_z + gender) + (lastWinRew * lastTranUnc +      1 | participant_id)"
+"Apathy","apathy_z","lastWinRew:lastTranUnc:apathy_z",-0.279025209284024,0.18044972449004,-1.54627672650963,0.122037750227724,"currStay ~ lastWinRew * lastTranUnc * apathy_z + lastWinRew *      lastTranUnc * (iq_z + age_z + gender) + (lastWinRew * lastTranUnc +      1 | participant_id)"
+"Social Anxiety","social_anx_z","lastWinRew:lastTranUnc:social_anx_z",0.279025305120584,0.180450647361921,1.54626934954108,0.122039531078621,"currStay ~ lastWinRew * lastTranUnc * social_anx_z + lastWinRew *      lastTranUnc * (iq_z + age_z + gender) + (lastWinRew * lastTranUnc +      1 | participant_id)"

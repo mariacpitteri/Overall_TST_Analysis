@@ -1,3 +1,3 @@
-"Estimate","Std. Error","t value","Pr(>|t|)","Predictor"
-0.212803970019353,1.58485168445506e-16,1342737444182509,0,"(Intercept)"
-0.265401897885625,1.58684646395378e-16,1672511512073764,0,"age_z"
+"predictor_estimate","std_error","t_value","p_value","predictor","model_formula"
+0.212803970019353,1.58485168445506e-16,1342737444182509,0,"(Intercept)","modelBased_estimate ~ age_z + gender"
+0.265401897885625,1.58684646395378e-16,1672511512073764,0,"age_z","modelBased_estimate ~ age_z + gender"

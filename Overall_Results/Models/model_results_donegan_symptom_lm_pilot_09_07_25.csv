@@ -1,10 +1,10 @@
-"Questionnaire","Coefficient","SE","T_value","P_value"
-"Eating Disorders",-0.265401897885625,1.61331948380985e-16,-1645067208008169,0
-"Impulsivity",0.265401897885625,1.59702792142228e-16,1661848827597601,0
-"OCD",0.265401897885625,1.58684646395378e-16,1672511512073764,0
-"Alcohol Addiction",0.265401897885625,1.61331948380985e-16,1645067208008169,0
-"Schizotypy",0.265401897885625,1.61331948380985e-16,1645067208008169,0
-"Depression",-0.265401897885625,1.61331948380985e-16,-1645067208008169,0
-"Trait Anxiety",-0.265401897885625,1.58684646395378e-16,-1672511512073764,0
-"Apathy",-0.265401897885625,1.61331948380985e-16,-1645067208008169,0
-"Social Anxiety",0.265401897885625,1.59702792142228e-16,1661848827597601,0
+"questionnaire","symptom_var","predictor","predictor_estimate","std_error","t_value","p_value","model_formula"
+"Eating Disorders","eat_z","eat_z",-0.265401897885625,1.61331948380985e-16,-1645067208008169,0,"modelBased_estimate ~ eat_z + age_z + gender"
+"Impulsivity","bis_z","bis_z",0.265401897885625,1.59702792142228e-16,1661848827597601,0,"modelBased_estimate ~ bis_z + age_z + gender"
+"OCD","oci_z","oci_z",0.265401897885625,1.58684646395378e-16,1672511512073764,0,"modelBased_estimate ~ oci_z + age_z + gender"
+"Alcohol Addiction","alcohol_z","alcohol_z",0.265401897885625,1.61331948380985e-16,1645067208008169,0,"modelBased_estimate ~ alcohol_z + age_z + gender"
+"Schizotypy","schizo_z","schizo_z",0.265401897885625,1.61331948380985e-16,1645067208008169,0,"modelBased_estimate ~ schizo_z + age_z + gender"
+"Depression","depress_z","depress_z",-0.265401897885625,1.61331948380985e-16,-1645067208008169,0,"modelBased_estimate ~ depress_z + age_z + gender"
+"Trait Anxiety","anxiety_z","anxiety_z",-0.265401897885625,1.58684646395378e-16,-1672511512073764,0,"modelBased_estimate ~ anxiety_z + age_z + gender"
+"Apathy","apathy_z","apathy_z",-0.265401897885625,1.61331948380985e-16,-1645067208008169,0,"modelBased_estimate ~ apathy_z + age_z + gender"
+"Social Anxiety","social_anx_z","social_anx_z",0.265401897885625,1.59702792142228e-16,1661848827597601,0,"modelBased_estimate ~ social_anx_z + age_z + gender"

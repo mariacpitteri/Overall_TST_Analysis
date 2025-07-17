@@ -92,27 +92,39 @@ def scatter_plots(participants_df, x_col, y_col, title, dot_color, line_color):
 def point_plot(participants_df):
     # Filter out (Intercept)
     df_filtered = participants_df[
-        participants_df["Predictor"].str.strip().str.lower() != "(intercept)"
+        participants_df["predictor"].str.strip().str.lower() != "(intercept)"
     ]
 
-    plt.figure(figsize=(8, 6))
+    predictors = df_filtered["predictor"].tolist()
+    x_positions = np.arange(
+        len(predictors)
+    )  # Numeric positions for both points & error bars
 
-    # Plot points using seaborn (for styling)
-    sns.scatterplot(data=df_filtered, x="Predictor", y="Estimate", color="blue", s=100)
+    plt.figure(figsize=(10, 6))
 
-    # Add error bars manually using Std. Error
+    # Plot points using numeric positions
+    sns.scatterplot(
+        x=x_positions, y=df_filtered["predictor_estimate"], color="blue", s=100
+    )
+
+    # Add error bars at numeric positions
     plt.errorbar(
-        x=df_filtered["Predictor"],
-        y=df_filtered["Estimate"],
-        yerr=df_filtered["Std. Error"],
-        fmt="none",  # No extra markers
-        ecolor="black",  # Error bar color
+        x=x_positions,
+        y=df_filtered["predictor_estimate"],
+        yerr=df_filtered["std_error"],
+        fmt="none",
+        ecolor="black",
         elinewidth=1.2,
         capsize=4,
     )
 
-    plt.ylim(min(0, df_filtered["Estimate"].min()), df_filtered["Estimate"].max() + 0.3)
-    plt.xticks(rotation=45)
+    # Align x-axis labels
+    plt.xticks(ticks=x_positions, labels=predictors, rotation=45, ha="right")
+
+    # Add horizontal line at 0
+    plt.axhline(0, color="gray", linestyle="--")
+
+    plt.ylim(-0.5, 0.5)
     plt.title("Predictor Estimates ± SE")
     plt.tight_layout()
     plt.show()
